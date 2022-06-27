@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+</head>
+<body>
+    <canvas id="tempLineChart" width="1000" height="400"></canvas>
+    <script>
+        var ctx = document.getElementById("tempLineChart").getContext("2d");
+        document.getElementById("tempLineChart").hidden = true;
+        var tempLineChart = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: {{ labels | safe }},
+                datasets: [
+                    {
+                        label: "Row 1 mean temperatures",
+                        data: {{ temperature_values_1 | safe }},
+                        fill: false,
+                        borderColor: "rgb(0,255,102)",
+                        lineTension: 0.1
+                    },
+                    {
+                        label: "Row 2 mean temperatures",
+                        data: {{ temperature_values_2 | safe }},
+                        fill: false,
+                        borderColor: "rgb(0,0,102)",
+                        lineTension: 0.1
+                    },
+                    {
+                        label: "Row 3 mean temperatures",
+                        data: {{ temperature_values_3 | safe }},
+                        fill: false,
+                        borderColor: "rgb(255,255,102)",
+                        lineTension: 0.1
+                    },
+                    {
+                        label: "Row 4 mean temperatures",
+                        data: {{ temperature_values_4 | safe }},
+                        fill: false,
+                        borderColor: "rgb(90,100,102)",
+                        lineTension: 0.1
+                    },
+                    {
+                        label: "Row 5 mean temperatures",
+                        data: {{ temperature_values_5 | safe }},
+                        fill: false,
+                        borderColor: "rgb(125,20,209)",
+                        lineTension: 0.1
+                    },
+                ]
+            },
+            options: {
+                responsive: false
+            }
+        });
+    </script>
+    <canvas id="humLineChart" width="1000" height="400"></canvas>
+    <script>
+        var ctx = document.getElementById("humLineChart").getContext("2d");
+        var humLineChart = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: {{ labels | safe }},
+                datasets: [
+                    {
+                        label: "Row 1 mean humidity",
+                        data: {{ humidity_values_1 | safe }},
+                        fill: false,
+                        borderColor: "rgb(0,255,102)",
+                        lineTension: 0.1
+                    },
+                    {
+                        label: "Row 2 mean humidity",
+                        data: {{ humidity_values_2 | safe }},
+                        fill: false,
+                        borderColor: "rgb(0,0,102)",
+                        lineTension: 0.1
+                    },
+                    {
+                        label: "Row 3 mean humidity",
+                        data: {{ humidity_values_3 | safe }},
+                        fill: false,
+                        borderColor: "rgb(255,255,102)",
+                        lineTension: 0.1
+                    },
+                    {
+                        label: "Row 4 mean humidity",
+                        data: {{ humidity_values_4 | safe }},
+                        fill: false,
+                        borderColor: "rgb(90,100,102)",
+                        lineTension: 0.1
+                    },
+                    {
+                        label: "Row 5 mean humidity",
+                        data: {{ humidity_values_5 | safe }},
+                        fill: false,
+                        borderColor: "rgb(125,20,209)",
+                        lineTension: 0.1
+                    },
+                ]
+            },
+            options: {
+                responsive: false
+            }
+        });
+    </script>
+        <canvas id="soilLineChart" width="1000" height="400"></canvas>
+        <script>
+            var ctx = document.getElementById("soilLineChart").getContext("2d");
+            var humLineChart = new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: {{ labels | safe }},
+                    datasets: [
+                        {
+                            label: "Row 1 mean soil moisture",
+                            data: {{ soil_moisture_values_1 | safe }},
+                            fill: false,
+                            borderColor: "rgb(0,255,102)",
+                            lineTension: 0.1
+                        },
+                        {
+                            label: "Row 2 mean soil moisture",
+                            data: {{ soil_moisture_values_2 | safe }},
+                            fill: false,
+                            borderColor: "rgb(0,0,102)",
+                            lineTension: 0.1
+                        },
+                        {
+                            label: "Row 3 mean soil moisture",
+                            data: {{ soil_moisture_values_3 | safe }},
+                            fill: false,
+                            borderColor: "rgb(255,255,102)",
+                            lineTension: 0.1
+                        },
+                        {
+                            label: "Row 4 mean soil moisture",
+                            data: {{ soil_moisture_values_4 | safe }},
+                            fill: false,
+                            borderColor: "rgb(90,100,102)",
+                            lineTension: 0.1
+                        },
+                        {
+                            label: "Row 5 mean soil moisture",
+                            data: {{ soil_moisture_values_5 | safe }},
+                            fill: false,
+                            borderColor: "rgb(125,20,209)",
+                            lineTension: 0.1
+                        },
+                    ]
+                },
+                options: {
+                    responsive: false
+                }
+            });
+        </script>
+                <canvas id="lightLineChart" width="1000" height="400"></canvas>
+                <script>
+                    var ctx = document.getElementById("lightLineChart").getContext("2d");
+                    var humLineChart = new Chart(ctx, {
+                        type: "line",
+                        data: {
+                            labels: {{ labels | safe }},
+                            datasets: [
+                                {
+                                    label: "Row 1 mean light exposure",
+                                    data: {{ light_exposure_values_1 | safe }},
+                                    fill: false,
+                                    borderColor: "rgb(0,255,102)",
+                                    lineTension: 0.1
+                                },
+                                {
+                                    label: "Row 2 mean light exposure",
+                                    data: {{ light_exposure_values_2 | safe }},
+                                    fill: false,
+                                    borderColor: "rgb(0,0,102)",
+                                    lineTension: 0.1
+                                },
+                                {
+                                    label: "Row 3 mean light exposure",
+                                    data: {{ light_exposure_values_3 | safe }},
+                                    fill: false,
+                                    borderColor: "rgb(255,255,102)",
+                                    lineTension: 0.1
+                                },
+                                {
+                                    label: "Row 4 mean light exposure",
+                                    data: {{ light_exposure_values_4 | safe }},
+                                    fill: false,
+                                    borderColor: "rgb(90,100,102)",
+                                    lineTension: 0.1
+                                },
+                                {
+                                    label: "Row 5 mean light exposure",
+                                    data: {{ light_exposure_values_5 | safe }},
+                                    fill: false,
+                                    borderColor: "rgb(125,20,209)",
+                                    lineTension: 0.1
+                                },
+                            ]
+                        },
+                        options: {
+                            responsive: false
+                        }
+                    });
+                </script>
+    <form method="post">
+        <div>
+            <label for="row_1_temperature">Row 1 temperature threshold</label>
+            <input type="number" name="row_1_temperature" id="row_1_temperature">
+        </div>
+        <div>
+            <label for="row_1_humidity">Row 1 humidity threshold</label>
+            <input type="number" name="row_1_humidity" id="row_1_humidity">
+        </div>
+        <div>
+            <label for="row_1_soil_moisture">Row 1 soil moisture threshold</label>
+            <input type="number" name="row_1_soil_moisture" id="row_1_soil_moisture">
+        </div>
+        <div>
+            <label for="row_1_light">Row 1 light absorbed threshold</label>
+            <input type="number" name="row_1_light" id="row_1_light">
+        </div>
+        <input type="submit" name='action' value='Submit row 1 thresholds'>
+    </form>
+    <form method="post">
+        <div>
+            <input type="checkbox" id="Light switch 1" name="Light switch 1">
+            <label for="Light switch 1"> Turn row 1 light on</label><br>
+            <input type="checkbox" id="Water switch 1" name="Water switch 1">
+            <label for="Water switch 1"> Turn row 1 water on</label><br>
+            <input type="checkbox" id="Fan switch 1" name="Fan switch 1">
+            <label for="Fan switch 1"> Turn row 1 fan on</label>
+            <input type="checkbox" id="Automatic control switch 1" name="Automatic control switch 1">
+            <label for="Automatic control switch 1"> Set automatic row 1 control</label>
+        </div>
+        <input type="submit" name='action' value='Submit row 1 switches settings'>
+    </form>
+    <form method="post">
+        <div>
+            <label for="row_2_temperature">Row 2 temperature threshold</label>
+            <input type="number" name="row_2_temperature" id="row_2_temperature">
+        </div>
+        <div>
+            <label for="row_2_humidity">Row 2 humidity threshold</label>
+            <input type="number" name="row_2_humidity" id="row_2_humidity">
+        </div>
+        <div>
+            <label for="row_2_soil_moisture">Row 2 soil moisture threshold</label>
+            <input type="number" name="row_2_soil_moisture" id="row_2_soil_moisture">
+        </div>
+        <div>
+            <label for="row_2_light">Row 2 light absorbed threshold</label>
+            <input type="number" name="row_2_light" id="row_2_light">
+        </div>
+        <input type="submit" name='action' value='Submit row 2 thresholds'>
+    </form>
+    <form method="post">
+        <div>
+            <input type="checkbox" id="Light switch 2" name="Light switch 2" value="On">
+            <label for="Light switch 2"> Turn row 2 light on</label><br>
+            <input type="checkbox" id="Water switch 2" name="Water switch 2" value="On">
+            <label for="Water switch 2"> Turn row 2 water on</label><br>
+            <input type="checkbox" id="Fan switch 2" name="Fan switch 2" value="On">
+            <label for="Fan switch 2"> Turn row 2 fan on</label>
+            <input type="checkbox" id="Automatic control switch 2" name="Automatic control switch 2">
+            <label for="Automatic control switch 2"> Set automatic row 2 control</label>
+        </div>
+        <input type="submit" name='action' value='Submit row 2 switches settings'>
+    </form>
+    <form method="post">
+        <div>
+            <label for="row_3_temperature">Row 3 temperature threshold</label>
+            <input type="number" name="row_3_temperature" id="row_3_temperature">
+        </div>
+        <div>
+            <label for="row_3_humidity">Row 3 humidity threshold</label>
+            <input type="number" name="row_3_humidity" id="row_3_humidity">
+        </div>
+        <div>
+            <label for="row_3_soil_moisture">Row 3 soil moisture threshold</label>
+            <input type="number" name="row_3_soil_moisture" id="row_3_soil_moisture">
+        </div>
+        <div>
+            <label for="row_3_light">Row 3 light absorbed threshold</label>
+            <input type="number" name="row_3_light" id="row_3_light">
+        </div>
+        <input type="submit" name='action' value='Submit row 3 thresholds'>
+    </form>
+    <form method="post">
+        <div>
+            <input type="checkbox" id="Light switch 3" name="Light switch 3" value="On">
+            <label for="Light switch 3"> Turn row 3 light on</label><br>
+            <input type="checkbox" id="Water switch 3" name="Water switch 3" value="On">
+            <label for="Water switch 3"> Turn row 3 water on</label><br>
+            <input type="checkbox" id="Fan switch 3" name="Fan switch 3" value="On">
+            <label for="Fan switch 3"> Turn row 3 fan on</label>
+            <input type="checkbox" id="Automatic control switch 3" name="Automatic control switch 3">
+            <label for="Automatic control switch 3"> Set automatic row 3 control</label>
+        </div>
+        <input type="submit" name='action' value='Submit row 3 switches settings'>
+    </form>
+    <form method="post">
+        <div>
+            <label for="row_4_temperature">Row 4 temperature threshold</label>
+            <input type="number" name="row_4_temperature" id="row_4_temperature">
+        </div>
+        <div>
+            <label for="row_4_humidity">Row 4 humidity threshold</label>
+            <input type="number" name="row_4_humidity" id="row_4_humidity">
+        </div>
+        <div>
+            <label for="row_4_soil_moisture">Row 4 soil moisture threshold</label>
+            <input type="number" name="row_4_soil_moisture" id="row_4_soil_moisture">
+        </div>
+        <div>
+            <label for="row_4_light">Row 4 light absorbed threshold</label>
+            <input type="number" name="row_4_light" id="row_4_light">
+        </div>
+        <input type="submit" name='action' value='Submit row 4 thresholds'>
+    </form>
+    <form method="post">
+        <div>
+            <input type="checkbox" id="Light switch 4" name="Light switch 4" value="On">
+            <label for="Light switch 4"> Turn row 4 light on</label><br>
+            <input type="checkbox" id="Water switch 4" name="Water switch 4" value="On">
+            <label for="Water switch 4"> Turn row 4 water on</label><br>
+            <input type="checkbox" id="Fan switch 4" name="Fan switch 4" value="On">
+            <label for="Fan switch 4"> Turn row 4 fan on</label>
+            <input type="checkbox" id="Automatic control switch 4" name="Automatic control switch 4">
+            <label for="Automatic control switch 4"> Set automatic row 4 control</label>
+        </div>
+        <input type="submit" name='action' value='Submit row 4 switches settings'>
+    </form>
+    <form method="post">
+        <div>
+            <label for="row_5_temperature">Row 5 temperature threshold</label>
+            <input type="number" name="row_5_temperature" id="row_5_temperature">
+        </div>
+        <div>
+            <label for="row_5_humidity">Row 5 humidity threshold</label>
+            <input type="number" name="row_5_humidity" id="row_5_humidity">
+        </div>
+        <div>
+            <label for="row_5_soil_moisture">Row 5 soil moisture threshold</label>
+            <input type="number" name="row_5_soil_moisture" id="row_5_soil_moisture">
+        </div>
+        <div>
+            <label for="row_5_light">Row 5 light absorbed threshold</label>
+            <input type="number" name="row_5_light" id="row_5_light">
+        </div>
+        <input type="submit" name='action' value='Submit row 5 thresholds'>
+    </form>
+    <form method="post">
+        <div>
+            <input type="checkbox" id="Light switch 5" name="Light switch 5" value="On">
+            <label for="Light switch 5"> Turn row 5 light on</label><br>
+            <input type="checkbox" id="Water switch 5" name="Water switch 5" value="On">
+            <label for="Water switch 5"> Turn row 5 water on</label><br>
+            <input type="checkbox" id="Fan switch 5" name="Fan switch 5" value="On">
+            <label for="Fan switch 5"> Turn row 5 fan on</label>
+            <input type="checkbox" id="Automatic control switch 5" name="Automatic control switch 5">
+            <label for="Automatic control switch 5"> Set automatic row control</label>
+        </div>
+        <input type="submit" name='action' value='Submit row 5 switches settings'>
+    </form>
+</body>
+</html>
